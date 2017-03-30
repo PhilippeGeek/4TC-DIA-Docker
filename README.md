@@ -90,6 +90,8 @@ docker network connect web app
 docker network connect web db
 ```
 
+Ne pas oublier de mettre à jour le fichier swmsg.xml et de rebuild l'image.
+
 ## 3° étape : composition
 
 Vous allez maintenant intégrer tout ça avec Docker Compose. Mais pour ça, il faut d’abord installer Docker Compose…​
@@ -122,3 +124,15 @@ On exécute la commande :
 ```sh
 docker container exec -i -u postgres tpdocker_db_1 psql < update-db.sql
 ```
+
+## 5° étape : reverse proxy
+
+Enfin, vous coupez l’accès direct à Tomcat et ouvrez l’accès à l’application par l’intermédiaire d’un reverse proxy Nginx.
+
+### Résolution
+On précise le fichier nginx-site.conf pour le host, le port et le path.
+
+Il faut ensuite mettre à jour le docker-compose.yml (voir le git history).
+
+J'ai du utiliser du 304 redirect permanant pour résoudre mon problème de path
+dans les requests.

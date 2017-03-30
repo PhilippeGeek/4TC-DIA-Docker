@@ -1,9 +1,15 @@
 version: '2'
 services:
+  nginx:
+    image: "nginx:alpine"
+    volumes:
+      - ./nginx-site.conf:/etc/nginx/nginx.conf
+    links:
+      - app
+    ports:
+      - "80:80"
   app:
     build: .
-    ports:
-     - "8080:8080"
     links:
       - db
   db:
