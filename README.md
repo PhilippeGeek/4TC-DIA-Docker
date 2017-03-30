@@ -70,6 +70,9 @@ docker container run -d -v $PWD/db:/data -e POSTGRES_PASSWORD=postgres -e PGDATA
 Postgres est ajouté avec un volume qui contient les données et ``PGDATA``
 permet de désigner le point de montage du volume.
 
+L'utilisation d'un ``PGDATA`` est recommandé dans la documentation officiel de
+l'image postgres.
+
 L'option ``-e POSTGRES_PASSWORD=postgres`` permet de mettre un mot de passe au
 user postgres
 
