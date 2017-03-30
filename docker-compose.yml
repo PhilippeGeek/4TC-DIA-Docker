@@ -12,5 +12,5 @@ services:
       PGDATA: /data
       POSTGRES_PASSWORD: postgres
     volumes:
-      - ./db:/data
+      - db:/data
       - ./create-db.sql:/docker-entrypoint-initdb.d/init-db.sql
