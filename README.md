@@ -89,3 +89,16 @@ docker network create web
 docker network connect web app
 docker network connect web db
 ```
+
+## 3° étape : composition
+
+Vous allez maintenant intégrer tout ça avec Docker Compose. Mais pour ça, il faut d’abord installer Docker Compose…​
+
+La version de Docker Compose n’est pas directement liée à celle de Docker Engine. On peut utiliser une version récente de Compose à partir d’Engine 1.9.1. Ça peut aussi fonctionner avec des versions plus ancienne, avec quelques risques (pour notre TP, ça a l’air de marcher). Officiellement, la dernière version de Compose qui supporte Engine 1.8 est la 1.5.2.
+
+Quelle que soit la version installée, on doit utiliser le format docker-compose.yml version 1.
+
+### Résolution
+La version utilisée de Docker Compose est 1.11.2.
+
+Voir le fichier docker-compose.yml (la version utilisée est 2)

@@ -1,0 +1,16 @@
+version: '2'
+services:
+  app:
+    build: .
+    ports:
+     - "8080:8080"
+    links:
+      - db
+  db:
+    image: "postgres:alpine"
+    environment:
+      PGDATA: /data
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - ./db:/data
+      - ./create-db.sql:/docker-entrypoint-initdb.d/init-db.sql
