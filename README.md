@@ -43,10 +43,10 @@ Pour construire et lancer l'image :
 
 ```sh
 docker build -t philippevienne/4tc-dia-docker .
-docker container run -p 8080:8080 -d --name app philippevienne/4tc-dia-docker
+docker container run -p 80:8080 -d --name app philippevienne/4tc-dia-docker
 ```
 
-On constate que sur http://localhost:8080/swmsg l'application doit être déployé
+On constate que sur http://localhost/swmsg l'application doit être déployé
 
 ## 2° étape : base de données
 
