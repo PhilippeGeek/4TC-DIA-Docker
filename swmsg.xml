@@ -3,6 +3,6 @@
     <Resource name="jdbc/SewaDS"
               auth="Container" type="javax.sql.DataSource"
               driverClassName="org.postgresql.Driver"
-              url="jdbc:postgresql://<hostname>:<port>/postgres"
-              username="<username>" password="<password>"/>
+              url="jdbc:postgresql://db/postgres"
+              username="postgres" password="postgres"/>
 </Context>
