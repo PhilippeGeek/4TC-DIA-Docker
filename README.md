@@ -101,4 +101,24 @@ Quelle que soit la version installée, on doit utiliser le format docker-compose
 ### Résolution
 La version utilisée de Docker Compose est 1.11.2.
 
-Voir le fichier docker-compose.yml (la version utilisée est 2)
+Voir le fichier docker-compose.yml (la version utilisée est 2).
+
+Pour lancer la première fois : ``docker-compose up``
+
+## 4° étape : MAJ DB
+
+Mettez la base de données à jour avec le contenu du script update-db.sql. Et comme tout à l’heure, vérifiez que les mises à jour restent présentes au redémarrage de la base de données.
+
+### Résolution
+J'ai tenté au début d'utiliser l'exec de docker-compose, cependant j'ai été
+confronté à un bug ouvert de docker-compose :
+https://github.com/docker/compose/issues/3352
+
+Je suis obligé de lister les container et d'utiliser ``docker exec`` avec le nom
+du container attribué par docker-compose.
+
+On exécute la commande :
+
+```sh
+docker container exec -i -u postgres tpdocker_db_1 psql < update-db.sql
+```

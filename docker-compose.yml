@@ -14,3 +14,6 @@ services:
     volumes:
       - db:/data
       - ./create-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+
+volumes:
+  db:
